@@ -4,13 +4,13 @@ public class Main {
     public static void main(String[] args) {
 
 
-       Exercise1(false);
-       Exercise2(true, 2055);
-       Exercise3(2003);
-       Exercise4(95);
-       Exercise5(3);
-       Exercise6((byte) 25, 60_000);
-       Exercise7((byte) 25, 60_000, 330_000);
+       //Exercise1(false);
+      // Exercise2(true, 2055);
+      // Exercise3(2003);
+      // Exercise4(95);
+       Exercise5(12);
+       //Exercise6((byte) 25, 60_000);
+      // Exercise7((byte) 25, 60_000, 330_000);
     }
 
     //Задание 1
@@ -41,12 +41,10 @@ public class Main {
 
     //Задание 3
     public static void Exercise3( int NumberYear) {
-        if (NumberYear%400==0){
+        if (NumberYear%400==0 && NumberYear%100!=0 ){
             System.out.println("Год является високосным!");
         }
-        else if (NumberYear%100==0){
-            System.out.println("Год не является високосным!");
-        }
+
         else if (NumberYear%4==0){
             System.out.println("Год является високосным!");
 
@@ -80,42 +78,27 @@ public class Main {
     //Задание 5
     public static void Exercise5(int monthNumber) {
       switch (monthNumber) {
+          case 12:
           case 1:
-              System.out.println("Зима");
-              break;
           case 2:
               System.out.println("Зима");
               break;
           case 3:
-              System.out.println("Весна");
-              break;
           case 4:
-              System.out.println("Весна");
-              break;
           case 5:
               System.out.println("Весна");
               break;
           case 6:
-              System.out.println("Лето");
-              break;
           case 7:
-              System.out.println("Лето");
-              break;
           case 8:
               System.out.println("Лето");
               break;
           case 9:
-              System.out.println("Осень");
-              break;
           case 10:
-              System.out.println("Осень");
-              break;
           case 11:
               System.out.println("Осень");
               break;
-          case 12:
-              System.out.println("Зима");
-              break;
+
           default:
               System.out.println("Такого меcяца не существует");
 
