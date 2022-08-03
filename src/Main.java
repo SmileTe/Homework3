@@ -1,12 +1,16 @@
+import java.security.cert.CRLReason;
+
 public class Main {
     public static void main(String[] args) {
 
 
-        Exercise1(false);
-        Exercise2(true, 2055);
-        Exercise3(2003);
-        Exercise4(95);
-        Exercise5(3);
+       Exercise1(false);
+       Exercise2(true, 2055);
+       Exercise3(2003);
+       Exercise4(95);
+       Exercise5(3);
+       Exercise6((byte) 25, 60_000);
+       Exercise7((byte) 25, 60_000, 330_000);
     }
 
     //Задание 1
@@ -18,7 +22,6 @@ public class Main {
      else
          System.out.println("Установите версию приложения для Android по ссылке");
     }
-
 
     //Задание 2
     public static void Exercise2(boolean ClientType, int clientDeviceYear) {
@@ -74,6 +77,7 @@ public class Main {
     System.out.println("Потребуется дней: " + Days);
     }
 
+    //Задание 5
     public static void Exercise5(int monthNumber) {
       switch (monthNumber) {
           case 1:
@@ -116,6 +120,51 @@ public class Main {
               System.out.println("Такого меcяца не существует");
 
       }
+
+
+
+    }
+
+    //Доп.задание 6
+    public static void  Exercise6 (byte age, int salary) {
+        int MaxLimit = 0;
+        if(age>=23){
+            MaxLimit = salary*3;
+        }
+        else {
+            MaxLimit = salary * 2;
+        }
+        if(salary >=80_000) {
+            MaxLimit *=1.5;
+        }
+        else if (salary >= 50_000) {
+            MaxLimit*=1.2;
+        }
+         System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + MaxLimit + " рублей");
+         }
+
+    //Доп.задание 7
+    public static void Exercise7 (byte age, int salary, int wantedSum) {
+    float BaseloanRate = 10f;
+    if (age <23) {
+        BaseloanRate+=1;
+    }
+    else if (age <30) {
+        BaseloanRate += 0.5;
+    }
+    if (salary>80_000) {
+        BaseloanRate-=0.7;
+    }
+    float Credit = (wantedSum  * (BaseloanRate + 100) ) / 100;
+    float PayInMonth = Credit / 12;
+    int MaxSum = salary /2;
+    if (MaxSum >=PayInMonth) {
+        System.out.println("Максимальный платеж при ЗП "
+                + salary + " равен " + MaxSum + " рублей. Платеж по кредиту " + PayInMonth +" рублей. Одобрено");
+    }
+    else
+        System.out.println("Максимальный платеж при ЗП "
+                + salary + " равен " + MaxSum + " рублей. Платеж по кредиту " + PayInMonth +" рублей. Отказано");
 
 
 
