@@ -3,7 +3,7 @@ public class Main {
 
 
         Exercise1(false);
-        Exercise2(false, 2018);
+        Exercise2(true, 2055);
         Exercise3(2003);
         Exercise4(95);
         Exercise5(3);
@@ -23,11 +23,10 @@ public class Main {
     //Задание 2
     public static void Exercise2(boolean ClientType, int clientDeviceYear) {
 
-        if (ClientType) {
-            if (clientDeviceYear <2015){
+        if (ClientType&&clientDeviceYear <2015){
                 System.out.println("Установите облегченную версию приложения для iOS по ссылке");
             }
-            else
+            else if  (ClientType){
             System.out.println("Установите версию приложения для iOS по ссылке");
         }
         else if (clientDeviceYear<2015)
