@@ -8,9 +8,10 @@ public class Main {
       // Exercise2(true, 2055);
       // Exercise3(2003);
       // Exercise4(95);
-       Exercise5(12);
+      // Exercise5(12);
        //Exercise6((byte) 25, 60_000);
-      // Exercise7((byte) 25, 60_000, 330_000);
+      Exercise7((byte) 25, 60_000, 330_000);
+        task7();
     }
 
     //Задание 1
@@ -154,6 +155,32 @@ public class Main {
     }
 
 
-
+    public static void task7() {
+        int age = 25;
+        int salary = 60_000;
+        int wantedSum = 330_000;
+        int maxPayment = salary / 2;
+        int creditTerm = 12;
+        float interestRate = 10;
+        if (age < 23) {
+            interestRate++;
+        } else if (age < 30) {
+            interestRate += 0.5;
+        }
+        if (salary > 80_000) {
+            interestRate -= 0.7;
+        }
+        float creditSum = wantedSum * (1 + (interestRate / 100));
+        float payment = creditSum / creditTerm;
+        System.out.println("Ваш максимальный платеж: " + maxPayment + ". Платеж по кредиту: " + payment);
+        if (payment > maxPayment) {
+            System.out.println("Отказано.");
+        } else {
+            System.out.println("Одобрено.");
+        }
+    }
 }
+
+
+//}
 
